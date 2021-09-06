@@ -6,10 +6,14 @@ pipeline {
     agent any
     parameters {
         choice(name: "Task", description: "Task to be executed", choices: task)
-    }
-    parameters {
-            choice(name: "Task1", description: "Task1 to be executed", choices: task1)
+         script {
+            if (env.BRANCH_NAME == 'master') {
+                echo 'I only execute on the master branch'
+            } else {
+                echo 'I execute elsewhere'
+            }
         }
+    }
     stages {
         stage('Dev') {
             steps {
