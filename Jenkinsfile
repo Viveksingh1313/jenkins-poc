@@ -1,3 +1,8 @@
+import org.jenkinsci.plugins.scriptsecurity.scripts.*
+
+toApprove = ScriptApproval.get().getPendingScripts().collect()
+toApprove.each {pending -> ScriptApproval.get().approveScript(pending.getHash())}
+
 // //This flow takes the manual onboarding steps and automates them with the project-included python code.
 // def projectName = 'icp-onboarding-automated-workflow'
 // def task = ['ICP','MDP-UI']
