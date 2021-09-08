@@ -18,7 +18,7 @@ pipeline {
 
         separator(name: "testing")
     ])
-    ])s
+    ])
     stages {
         stage('Dev') {
             steps {
