@@ -6,12 +6,7 @@ def task1 = ['ICP','MDP-UI']
 pipeline {
     agent any
     parameters {
-        separator(name: "building")
-        choice(name: "java_vendor", choices: "Corretto")
-        choice(name: "java_version", choices: "11")
-        separator(name: "testing")
-        choice(name: "browser", choices: "chrome")
-        separator(name: "end")
+        separator(name: "ICP")
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
         string(name: 'Bucket_Name', description: 'Name of the bucket')
         string(name: 'Company_Name', description: 'Name of the company')
@@ -19,6 +14,8 @@ pipeline {
         string(name: 'Source_Path', description: 'Path of the file to th uploaded')
         string(name: 'Destination_Path', description: 'Destination where file will be uploaded')
         booleanParam(name: 'Actively_Managed_client', description: 'Is this client actively managed ?')
+        separator(name: "MDP-UI")
+
     }
     stages {
         stage('Dev') {
