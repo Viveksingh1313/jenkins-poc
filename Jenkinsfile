@@ -5,8 +5,9 @@ def task = ['ICP','MDP-UI']
 def task1 = ['ICP','MDP-UI']
 pipeline {
     agent any
-    parameters {
-        separator(name: "building")
+    properties([
+    parameters ([
+        separator(name: "BUILD_ENVIRONMENT", sectionHeader: "Build Environment"),
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
         string(name: 'Bucket_Name', description: 'Name of the bucket')
         string(name: 'Company_Name', description: 'Name of the company')
@@ -16,7 +17,8 @@ pipeline {
         booleanParam(name: 'Actively_Managed_client', description: 'Is this client actively managed ?')
 
         separator(name: "testing")
-    }
+    ])
+    ])s
     stages {
         stage('Dev') {
             steps {
