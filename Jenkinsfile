@@ -5,7 +5,7 @@ def task = ['ICP','MDP-UI']
 def task1 = ['ICP','MDP-UI']
 pipeline {
     agent any
-    properties([
+    options([
     	parameters([
     		separator(name: "BUILD_ENVIRONMENT", sectionHeader: "Build Environment",
     			separatorStyle: "border-width: 0",
