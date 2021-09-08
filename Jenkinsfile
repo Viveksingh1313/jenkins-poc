@@ -13,6 +13,7 @@ pipeline {
         string(name: 'Product_Name', description: 'Name of the product')
         string(name: 'Source_Path', description: 'Path of the file to th uploaded')
         booleanParam(name: 'Actively_Managed_client', description: 'Is this client actively managed ?')
+        base64File 'THEFILE'
 
         separator(name: "MDP-UI",  sectionHeader: "MDP-UI")
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
