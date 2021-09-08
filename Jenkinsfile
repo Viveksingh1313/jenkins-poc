@@ -5,6 +5,7 @@ def task = ['ICP','MDP-UI']
 def task1 = ['ICP','MDP-UI']
 pipeline {
     agent any
+    echo 'Choose ICP. Choose MDP UI'
     parameters {
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
         string(name: 'Bucket_Name', description: 'Name of the bucket')
