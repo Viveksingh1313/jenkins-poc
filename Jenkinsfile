@@ -7,7 +7,7 @@ pipeline {
     agent any
     parameters {
         separator(name: "ICP")
-        text(name: 'ICP', defaultValue: 'One\nTwo\nThree\n', description: 'This is ICP')
+        text(name: 'ICP')
         choice(name: "browser", choices: "chrome")
         separator(name: "end")
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
