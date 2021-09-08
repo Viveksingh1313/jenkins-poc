@@ -6,7 +6,8 @@ def task1 = ['ICP','MDP-UI']
 pipeline {
     agent any
     parameters {
-        separator(name: "ICP")
+        separator(name: "ICP", sectionHeader: "Build Environment")
+
         text(name: 'ICP')
         choice(name: "browser", choices: "chrome")
         separator(name: "end")
