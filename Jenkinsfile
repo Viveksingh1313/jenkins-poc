@@ -11,7 +11,7 @@ pipeline {
         string(name: 'Bucket_Name', description: 'Name of the bucket')
         string(name: 'Company_Name', description: 'Name of the company')
         string(name: 'Product_Name', description: 'Name of the product')
-        string(name: 'Source_Path', description: 'Path of the file to th uploaded')
+        string(name: 'Destination_Path', description: 'S3 bucket where file is to be uploaded')
         booleanParam(name: 'Actively_Managed_client', description: 'Is this client actively managed ?')
         file(name:'File_to_be_uploaded', description: 'Select the file to be uploaded')
 
@@ -26,9 +26,14 @@ pipeline {
     }
     stages {
         stage('Dev') {
-            steps {
-                echo 'vivek'
+        agent {
+            docker {
+                image 'node:16-alpine3.11'
             }
+        }
+        steps {
+            echo 'vivek'
+        }
         }
     }
 }
