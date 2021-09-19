@@ -13,7 +13,7 @@ pipeline {
         string(name: 'Product_Name', description: 'Name of the product')
         string(name: 'Destination_Path', description: 'S3 bucket where file is to be uploaded')
         booleanParam(name: 'Actively_Managed_client', description: 'Is this client actively managed ?')
-        file(name:'File_to_be_uploaded', description: 'Select the file to be uploaded')
+        file(name:'File', description: 'Select the file to be uploaded')
 
         separator(name: "MDP-UI",  sectionHeader: "MDP-UI")
         string(name: 'Dsa_Client_Bid', description: 'Input the DsaClientBid')
@@ -33,6 +33,7 @@ pipeline {
         }
         steps {
             echo 'vivek'
+            sh 'node index.js'
         }
         }
     }
